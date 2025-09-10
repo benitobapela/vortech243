@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9w5!*#lvisnj_03o2+&1^w4^w9plg_z$y(gm8qu9q$&0cl48@+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vortech243.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
 # Application definition
@@ -132,7 +132,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR / 'media') 
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
