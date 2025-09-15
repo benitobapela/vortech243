@@ -1,0 +1,158 @@
+/* Variables globales */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #64748b;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --success-color: #059669;
+    --danger-color: #dc2626;
+    --warning-color: #d97706;
+    --info-color: #0284c7;
+}
+
+/* Layout */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background: var(--primary-color);
+    width: 250px;
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+main {
+    margin-left: 250px;
+    padding: 48px 30px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 250px;
+    z-index: 99;
+    height: 48px;
+    background: #fff !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+/* Navigation */
+.sidebar .nav-link {
+    color: rgba(255,255,255,.8);
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background: rgba(255,255,255,.1);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background: rgba(255,255,255,.2);
+    border-left: 4px solid #fff;
+}
+
+.sidebar .nav-link i {
+    margin-right: .75rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Cards */
+.stats-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.quick-action-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.quick-action-card:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+    color: white;
+}
+
+.quick-action-card:hover .text-primary {
+    color: white !important;
+}
+
+.quick-action-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+/* Tables */
+.table-responsive {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
+
+.table th {
+    background-color: var(--light-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Utilities */
+.dropdown-item i {
+    margin-right: .5rem;
+    width: 16px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 0;
+    }
+    
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .navbar {
+        left: 0;
+    }
+    
+    .stats-card {
+        margin-bottom: 20px;
+    }
+} 

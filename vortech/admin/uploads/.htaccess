@@ -1,0 +1,14 @@
+# Autoriser l'accès aux fichiers
+<FilesMatch "\.(jpg|jpeg|png|gif|svg|ico)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Empêcher l'accès aux autres types de fichiers
+<FilesMatch "^(?!.*\.(jpg|jpeg|png|gif|svg|ico)$)">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes 

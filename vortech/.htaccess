@@ -1,0 +1,41 @@
+# Force UTF-8 encoding
+AddDefaultCharset UTF-8
+
+# Set default language
+DefaultLanguage fr-FR
+
+# PHP settings
+<IfModule mod_php.c>
+    php_value default_charset UTF-8
+</IfModule>
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Autoriser l'accès direct aux fichiers dans uploads
+    RewriteRule ^uploads/ - [L]
+</IfModule>
+
+# Force content-type and charset
+AddType 'text/html; charset=UTF-8' html
+AddType 'text/css; charset=UTF-8' css
+AddType 'text/javascript; charset=UTF-8' js
+AddType 'application/json; charset=UTF-8' json
+AddType 'image/svg+xml' svg
+
+# Force UTF-8 for certain file types
+<FilesMatch "\.(html|htm|php|css|js|json)$">
+    AddCharset UTF-8 .html .htm .php .css .js .json
+    Header set Content-Type "text/html; charset=UTF-8"
+</FilesMatch>
+
+# Configuration pour les fichiers SVG
+<FilesMatch "\.svg$">
+    Header set Content-Type "image/svg+xml"
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header set Content-Type "text/html; charset=UTF-8"
+</IfModule> 
