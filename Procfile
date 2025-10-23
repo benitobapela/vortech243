@@ -1,2 +1,2 @@
 web: gunicorn
-VORTECH243.wsgi:application
+vortech.wsgi:application
